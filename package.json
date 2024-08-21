@@ -1,0 +1,22 @@
+{
+  "name": "rogueike",
+  "version": "1.0.0",
+  "description": "1.기능 2.사용법 3.테스트방법 4.결과",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "figlet": "^1.7.0",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}
