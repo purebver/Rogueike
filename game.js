@@ -10,7 +10,7 @@ class Player {
     this.hp = hp;
     this.power = power;
     this.twice = 30;
-    this.defense = 30;
+    this.defense = 20;
   }
 
   attack(target) {
@@ -27,8 +27,8 @@ class Player {
 
 class Monster {
   constructor(mul) {
-    this.hp = Math.floor(20 * mul * (Math.random() * 0.22 + 0.8));
-    this.power = Math.floor(5 * mul * (Math.random() * 0.22 + 0.8));
+    this.hp = Math.floor(20 * mul * (Math.random() * 0.9 + 0.6));
+    this.power = Math.floor(5 * mul * (Math.random() * 0.9 + 0.6));
   }
 
   attack(target) {
@@ -163,19 +163,20 @@ const battle = async (stage, player, monster) => {
   return true; //도주한게 아님을 나타냄
 };
 
-
+// 게임시작
 export async function startGame(hp, power) {
-  achieve.start++;
+  achieve.start++;// 업적용
+
   console.clear();
-  const player = new Player(hp, power);
 
-  let stage = 1;
+  const player = new Player(hp, power);// 플레이어 생성
 
+  let stage = 1;// 스테이지 생성
+
+  //메인 스테이지 관리 로직
   while (stage <= 10) {
     const monster = new Monster(stage);
     const temp = await battle(stage, player, monster); //배틀 및 도주 확인용 리턴값
-
-    let reward = 0;
 
     // 스테이지에서 도주
     if (!temp) {
@@ -196,6 +197,7 @@ export async function startGame(hp, power) {
     }
 
     // 스테이지 클리어 및 게임 종료 조건
+    let reward = 0; //스테이지 클리어 보상 정산값 저장용
 
     if (monster.hp > 0) {
       continue;
@@ -239,8 +241,9 @@ export async function startGame(hp, power) {
     stage++;
   }
 
-  //클리어 했을 경우
+  // while문 탈출은 클리어 했을 경우뿐
   console.log(chalk.blue('축하합니다 게임을 클리어 하셨습니다.'));
+
   achieve.clear++;
   fs.writeFileSync('achieve.json', JSON.stringify(achieve), 'utf8');
   await delay(1000);

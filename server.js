@@ -112,10 +112,10 @@ async function handleUserInput() {
         case '2':
             // 업적 확인하기 로직을 구현
             console.log(chalk.yellow('달성된 업적 목록 입니다.'));
-            achieve.start > 0 ? console.log('산뜻한 출발 - 업적 완료') : console.log('숨겨진 업적');
-            achieve.death > 4 ? console.log('좀비? - 업적 완료') : console.log('숨겨진 업적');
-            achieve.attack > 19 ? console.log('일단공격해! - 업적 완료') : console.log('숨겨진 업적');
-            achieve.clear > 0 ? console.log('클리어! WOW 축하해요 - 업적 완료') : console.log('숨겨진 업적');
+            achieve.start > 0 ? console.log('산뜻한 출발 - 업적 완료') : console.log('? - 숨겨진 업적');
+            achieve.death > 4 ? console.log('좀비? - 업적 완료') : console.log('? - 숨겨진 업적');
+            achieve.attack > 19 ? console.log('일단공격해! - 업적 완료') : console.log('? - 숨겨진 업적');
+            achieve.clear > 0 ? console.log('클리어! WOW 축하해요 - 업적 완료') : console.log('? -숨겨진 업적');
             const temp = readlineSync.question('아무글자나 눌러주세요:');
             displayLobby();
             handleUserInput();
