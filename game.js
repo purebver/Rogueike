@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 import fs from 'fs';
 import {achieve} from './server.js';
 
-export const delay = (delaytime) => new Promise((a) => setTimeout(a, delaytime - 1000))
+export const delay = (delaytime) => new Promise((a) => setTimeout(a, delaytime))
 
 class Player {
   constructor(hp, power) {
