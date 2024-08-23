@@ -8,5 +8,5 @@
 방어확률 기본 30%
 도주
 2.테스트방법
-game.js 내부 160줄 delay 맨뒤 deltime 뒤에 -1000 하고 시작할것
+game.js 내부 6줄 delay 맨뒤 deltime 뒤에 -1000 하고 시작할것
 터미널 node server.js
